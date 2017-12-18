@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animated Image Pieces | Demo: Gallery | Codrops</title>
+    <meta name="description" content="An animated pieces effect for images with many possibilities"/>
+    <meta name="keywords" content="animation, piece, fragment, box, css, javascript, demo, effect, web dev"/>
+    <meta name="author" content="Codrops"/>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo-gallery.css"/>
+    <link rel="stylesheet" type="text/css" href="pater/pater.css"/>
+    <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+
+
+    <script>document.documentElement.className = 'js';</script>
+</head>
+<body class="demo-gallery loading">
+<svg class="hidden">
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <title>arrow</title>
+        <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+    </symbol>
+    <symbol id="icon-drop" viewBox="0 0 24 24">
+        <title>drop</title>
+        <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/>
+        <path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+    </symbol>
+</svg>
+<main>
+    <div class="content">
+
+        <div class="gallery">
+            <div class="gallery__item pieces gallery__item--current" style="background-image: url(img/art.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/music.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/dance.png)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/4d.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/g5.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/g5.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/g5.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/g5.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/g5.jpg)"></div>
+
+        </div>
+        <nav class="nav nav-tabs gallery-nav" role="tablist">
+            <a href="#Art" role="tab" data-toggle="tab"
+               class="nav-link gallery-nav__item gallery-nav__item--current"></a>
+            <a href="#Music" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+            <a href="#Dance" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+            <a href="#Drama" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+            <a href="#Literary" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a><br>
+            <a href="#ProShows" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+            <a href="#Fashion" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+            <a href="#Misc" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+            <a href="#Informal" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+        </nav>
+        <div class="tab-content tab-nav" style="text-align: center">
+            <div role="tabpanel" class="tab-pane active" id="Art">
+                <h1>Art</h1>
+                <a id="btnArt" class="btn" href="#eventsArt">View Events</a>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Music">
+                <h2>Music</h2>
+                <button class="btn">View Events</button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Dance">
+                <h2>Dance</h2>
+
+                <button class="btn">View Events</button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Drama">
+                <h2>Drama</h2>
+
+                <button class="btn">View Events</button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Literary">
+                <h2>Literary</h2>
+
+                <button class="btn">View Events</button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="ProShows">
+                <h2>ProShows</h2>
+
+                <button class="btn">View Events</button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Fashion">
+                <h2>Fashion</h2>
+
+                <button class="btn">View Events</button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Misc">
+                <h2>Misc</h2>
+
+                <button class="btn">View Events</button>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="Informal">
+                <h2>Informal</h2>
+
+                <button class="btn">View Events</button>
+
+            </div>
+
+
+        </div>
+
+        <div id="eventsArt">
+
+            <div id="closebt-container" class="closebt close-eventsArt">
+                <i class="fa fa-2x fa-close"></i>
+            </div>
+            <div class="modal-content">
+                <h2><span class="title-down">ART</span></h2>
+                <p class="text-intro">Art is the only way to run away without leaving home.</p>
+                <p>Do you spend lectures doodling in your notebook and have a knack for bringing to life with those
+                    colors, a Kodak moment? Do you think out of the box and explore the very frontiers of human
+                    creativity? Lose yourself and drown in the colours of the world. Create that which cannot be
+                    explained but only experienced. An artist would not be an artist if the world appeared normal.
+                    With a plethora of unique competitions like 3-D Painting, Doodling, Sketching, Painting and
+                    Rapid Rounds, Fine Arts at Engi is where you’re restricted only by the boundaries in your own
+                    mind!
+                </p>
+                <h3>Events</h3>
+                <ul>
+                    <li><a id='btnart_and_furious' href="#art_and_furious" class="">Art and Furious</a></li>
+                    <li><a id='btn3d_art' href="#3d_art" class="">3D Art</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="art_and_furious">
+
+            <div id="closebt-container" class="closebt close-art_and_furious">
+                <i class="fa fa-2x fa-close"></i>
+            </div>
+            <div class="modal-content">
+                <h2><span class="title-down">Art and Furious</span></h2>
+                <div class="contact-content">
+                    Nayan Lal - 9540669462 <br>
+                </div>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#art-and-furoiushome">Info</a>
+                            </h4>
+                        </div>
+                        <div id="art-and-furoiushome" class="collapse panel-collapse in">
+                            <div class="info-content">
+                                <div class="info-row">In this event, contestants will be required to present
+                                    their best creation out of the material provided to them. As we proceed with
+                                    this competition, the challenges will keep getting tougher. Tougher themes
+                                    and even tougher time restrictions. A marathon intended to test their
+                                    creativity and imagination, with the completion of each stage, the
+                                    contestants will be filtered until we have our Last Man Standing.
+                                </div>
+                                <div class="info-col">
+                                    <b>Date: </b><br>
+                                    <b>Time: </b><br>
+                                    <b>Venue: </b><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#art-and-furoiusmenu1">
+                                    Rules</a>
+                            </h4>
+                        </div>
+                        <div id="art-and-furoiusmenu1" class="panel-collapse collapse">
+                            <div class="rule-content">
+
+                                Rules:<br>
+
+                                1. There will be 3 Rounds: The total time provided for completing all the rounds
+                                will be 3 hours.<br>
+                                2. Required Materials will be provided.<br>
+                                3. Activities along with topics will be given on the spot for each round.<br>
+                                4. Contestants found with any unfair means or with layout reference during the
+                                competition will be disqualified.<br>
+                                5. The judges result shall be final and binding.<br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="3d_art">
+
+            <div id="closebt-container" class="closebt close-3d_art">
+                <i class="fa fa-2x fa-close"></i>
+            </div>
+            <div class="modal-content">
+
+                <h2><span class="title-down">3D Art</span></h2>
+                <div class="contact-content">
+                    Nayan Lal - 9540669462 <br>
+                </div>
+                <div class="panel-group" id="accordion1">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion1" href="#3-d-arthome">Info</a>
+                            </h4>
+                        </div>
+                        <div id="3-d-arthome" class="collapse panel-collapse in">
+                            <div class="info-content">
+                                <div class="info-row">Contestants are required to sculpt a model using blades
+                                    and sculpting tools, out of the material provided to them.
+                                    <br><br>
+                                </div>
+                                <div class="info-col">
+                                    <b>Date: </b><br>
+                                    <b>Time: </b><br>
+                                    <b>Venue: </b><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#3-d-artmenu1">
+                                    Rules</a>
+                            </h4>
+                        </div>
+                        <div id="3-d-artmenu1" class="collapse panel-collapse">
+                            <div class="rule-content">
+                                RULES:<br>
+                                1. The Duration of competition is of 3 hours.<br>
+
+                                2. Required Materials will be provided.<br>
+
+                                3. Topics will be given on the spot.<br>
+
+                                4. Contestants found with any unfair means or with layout reference during the
+                                competition will be disqualified.<br>
+
+                                5. The judges result shall be final and binding.<br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="switch" style="display:none">
+        <button class="switch__item switch__item--current">Effect 2</button>
+    </div>
+    </div>
+</main>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/anime.min.js"></script>
+<script src="js/main.js"></script>
+
+
+<script src="js/init.js"></script>
+<script src="pater/pater.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="js/animatedModal.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btnArt").animatedModal({
+            modalTarget: 'eventsArt',
+            animatedIn:'zoomIn',
+            animatedOut:'bounceOut',
+        });
+
+
+        $("#btnart_and_furious").animatedModal({
+            modalTarget: 'art_and_furious',
+            animatedIn:'lightSpeedIn',
+            animatedOut:'bounceOutDown',
+            color:'lightblue'
+        });
+
+        $("#btn3d_art").animatedModal({
+            modalTarget: '3d_art',
+            animatedIn:'bounceInUp',
+            animatedOut:'bounceOutDown',
+            color:'lightblue'
+        });
+    })
+
+</script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</body>
+</html>
+			

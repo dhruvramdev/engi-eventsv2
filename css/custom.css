@@ -1,0 +1,56 @@
+.tab-nav {
+    grid-area: 7 / 1 / 9 / 7;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2em 0 0;
+}
+
+
+.btn {
+    background-color: white ;
+    border-radius: 0;
+}
+
+.modal-content {
+    background-color: transparent;
+	position:relative;
+    padding : 5% ;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-shadow: none ;
+    overflow:hidden;
+    border : none ;
+    color : black;
+} 
+
+.closebt {
+    text-align: center ;
+    margin : auto ;
+    margin-top: 2%;
+}
+
+.modal-content p {
+    font-size: 16px;
+}
+
+.title-up {
+    font-size: 0.365em;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+}
+
+.title-down {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.35em;
+    font-weight: 400;
+    line-height: 0.9;
+    display: block;
+    padding: 0.15em 0 0.35em;
+}
+
+.panel-collapse {
+    padding: 2%;
+}
