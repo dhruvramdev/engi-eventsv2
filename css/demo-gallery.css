@@ -13,13 +13,13 @@
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(7, 1fr);
+	grid-template-rows: repeat(8, 1fr);
 	height: 100vh;
 	min-height: 500px;
 	padding-top: 5vh;
 	overflow: hidden;
 	font-family: var(--content-font);
-	--pieces-height: calc(95vh - (95vh / 7 ) - 5em);
+	--pieces-height: calc(80vh - (80vh / 6 ) - 5em);
 }
 
 .deco-letter {
@@ -169,23 +169,15 @@
 	background: var(--body-text);
 }
 
-@media screen and (max-width: 60em) {
-	.demo-gallery .pater {
-		color: #fff !important;
-	}
-}
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 640px) {
 	.content {
-		margin-bottom: 8em;
-		height: auto;
+		max-height: 100vh;
    		min-height: 0;
 		grid-template-columns: 100%;
 		grid-template-rows: var(--pieces-height) auto auto;
-		--pieces-height: 300px;
+		--pieces-height: 59vh;
 	}
-	.deco-letter {
-		display: none;
-	}
+
 }
 

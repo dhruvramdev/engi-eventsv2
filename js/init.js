@@ -8,7 +8,7 @@
     let current = 0;
     let isAnimating = false;
     let animateInTimeout;
-    let fx = 0;
+    let fx = 1;
 
     galleryItems.forEach((item) => {
         piecesObjs.push(new Pieces(item, {
