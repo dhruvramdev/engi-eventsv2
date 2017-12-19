@@ -8,12 +8,12 @@
     let current = 0;
     let isAnimating = false;
     let animateInTimeout;
-    let fx = 1;
+    let fx = 2;
 
     galleryItems.forEach((item) => {
         piecesObjs.push(new Pieces(item, {
-        pieces: {rows: 6, columns: 3},
-        delay: [0,175]
+        pieces: {rows: 7, columns: 4},
+        delay: [0,200]
     }));
 });
 

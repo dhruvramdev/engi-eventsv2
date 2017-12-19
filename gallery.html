@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="css/demo-gallery.css"/>
     <link rel="stylesheet" type="text/css" href="pater/pater.css"/>
     <link rel="stylesheet" type="text/css" href="css/custom.css"/>
+    <link rel="stylesheet" href="css/back.css">
 
 
     <script>document.documentElement.className = 'js';</script>
@@ -35,10 +36,12 @@
     </symbol>
 </svg>
 <main>
-    <div class="content">
+
+
+    <div class="content page-bg">
         <div class="gallery">
             <div class="gallery__item pieces gallery__item--current" style="background-image: url(img/art.jpg)"></div>
-            <div class="gallery__item pieces" style="background-image: url(img/music.jpg)"></div>
+            <div class="gallery__item pieces" style="background-image: url(img/music1.png)"></div>
             <div class="gallery__item pieces" style="background-image: url(img/dance.png)"></div>
             <div class="gallery__item pieces" style="background-image: url(img/4d.jpg)"></div>
             <div class="gallery__item pieces" style="background-image: url(img/g5.jpg)"></div>
@@ -48,6 +51,7 @@
             <div class="gallery__item pieces" style="background-image: url(img/g5.jpg)"></div>
         </div>
         <nav class="nav nav-tabs gallery-nav" role="tablist">
+            <i id="go-left" class="fa fa-angle-left fa-3x"></i>
             <a href="#Art" role="tab" data-toggle="tab"
                class="nav-link gallery-nav__item gallery-nav__item--current"></a>
             <a href="#Music" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
@@ -58,6 +62,7 @@
             <a href="#Fashion" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
             <a href="#Misc" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
             <a href="#Informal" role="tab" data-toggle="tab" class="nav-link gallery-nav__item"></a>
+            <i id="go-right" class="fa fa-angle-right fa-3x"></i>
         </nav>
         <div class="tab-content tab-nav" style="text-align: center">
             <div role="tabpanel" class="tab-pane active" id="Art">
@@ -67,7 +72,7 @@
                         <a id="btnArt" href="#eventsArt"><h2>View Events</h2></a>
                     </div>
                     <div class="right">
-                        <a id="category1" href="#categories"><h2>All Categories</h2></a>
+                        <a href="#" id="category1"><h2>All Categories</h2></a>
                     </div>
                 </div>
             </div>
@@ -75,7 +80,7 @@
                 <h1>Music</h1>
                 <div class="bar">
                     <div class="left">
-                        <a id="btnMusic" href="#eventsMusicnt"><h2>View Events</h2></a>
+                        <a id="btnMusic" href="#eventsMusic"><h2>View Events</h2></a>
                     </div>
                     <div class="right">
                         <a id="category2" href="#categories"><h2>All Categories</h2></a>
@@ -96,9 +101,9 @@
             <div role="tabpanel" class="tab-pane" id="Drama">
                 <h1>Drama</h1>
                 <div class="bar">
-                    <dib class="left">
+                    <div class="left">
                         <a id="btnDrama" href="#eventsDrama"><h2>View Events</h2></a>
-                    </dib>
+                    </div>
                     <div class="right">
                         <a id="category4" href="#categories"><h2>All Categories</h2></a>
                     </div>
@@ -127,8 +132,27 @@
         </div>
     </div>
 
+    <div class="animation-wrapper">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+    </div>
+
     <div class="switch" style="display:none">
         <button class="switch__item switch__item--current">Effect 2</button>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Art</a>
+        <a href="#">Music</a>
+        <a href="#">Dance</a>
+        <a href="#">Drama</a>
+        <a href="#">Literary</a>
+        <a href="#">Proshows</a>
+        <a href="#">Misc</a>
+        <a href="#">Informal</a>
     </div>
 
 
@@ -285,7 +309,7 @@
     <!-- start music -->
     <div id="eventsMusic">
 
-        <div id="closebt-container" class="closebt close-eventsArt">
+        <div id="closebt-container" class="closebt close-eventsMusic">
             <i class="fa fa-2x fa-close"></i>
         </div>
         <div class="modal-content">
@@ -1574,11 +1598,48 @@
 <script src="js/animatedModal.min.js"></script>
 <script>
     $(document).ready(function () {
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "25vw";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        $('.right').on('click' , function(){
+           openNav() ;
+           console.log('Trigger')
+        });
+
+        $('.closebtn').on('click' , function(){
+           closeNav() ;
+        });
+
+        $('#go-left').on('click' , function(){
+            console.log('Trigeer');
+            var active, prev;
+            active = document.querySelector('.gallery-nav__item--current');
+
+           prev =  active.previousElementSibling;
+           prev.click() ;
+        });
+
+        $('#go-right').on('click' , function(){
+            console.log('Trigeer');
+            var active, next;
+            active = document.querySelector('.gallery-nav__item--current');
+
+            next =  active.nextElementSibling;
+            next.click() ;
+        });
+
         $("#btnArt").animatedModal({
             modalTarget: 'eventsArt',
             animatedIn: 'zoomIn',
             animatedOut: 'bounceOut',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
 
@@ -1586,63 +1647,63 @@
             modalTarget: 'art_and_furious',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btn3d_art").animatedModal({
             modalTarget: '3d_art',
             animatedIn: 'bounceInUp',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
         // music
         $("#btnMusic").animatedModal({
             modalTarget: 'eventsMusic',
             animatedIn: 'zoomIn',
             animatedOut: 'bounceOut',
-            color:'#fafafa'
+            color:'#cccccc'
         });
 
         $("#btnengi_idol").animatedModal({
             modalTarget: 'engi_idol',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btnvocalicious").animatedModal({
             modalTarget: 'vocalicious',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btnballendeers").animatedModal({
             modalTarget: 'ballendeers',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btnvrind").animatedModal({
             modalTarget: 'vrind',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btntows_a_show").animatedModal({
             modalTarget: 'tows_a_show',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btnacoustic_alchemy").animatedModal({
             modalTarget: 'acoustic_alchemy',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
         // end music 
 
@@ -1651,28 +1712,28 @@
             modalTarget: 'eventsDance',
             animatedIn: 'zoomIn',
             animatedOut: 'bounceOut',
-            color:'#fafafa'
+            color:'#cccccc'
         });
 
         $("#btnspandan").animatedModal({
             modalTarget: 'spandan',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btnanushthaan").animatedModal({
             modalTarget: 'anushthaan',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btnswitch_the_funk_up").animatedModal({
             modalTarget: 'switch_the_funk_up',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
         // dance end  
 
@@ -1681,21 +1742,21 @@
             modalTarget: 'eventsDrama',
             animatedIn: 'zoomIn',
             animatedOut: 'bounceOut',
-            color:'#fafafa'
+            color:'#cccccc'
         });
 
         $("#btnnukkad").animatedModal({
             modalTarget: 'nukkad',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         $("#btnnatya").animatedModal({
             modalTarget: 'natya',
             animatedIn: 'lightSpeedIn',
             animatedOut: 'bounceOutDown',
-            color: '#fafafa'
+            color: '#cccccc'
         });
 
         // end drama  
